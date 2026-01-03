@@ -120,6 +120,29 @@ int checkAN(int n) {
     return 0;
 }
 
+int printDivisors(int n) {
+    for (int i =1; i <= n; i++) {
+        if (n % i == 0) {
+            cout << i << " ";
+        }
+    }
+    cout << endl;
+    return 0;
+}
+
+int printDivisorsOptimized(int n) {
+    for (int i =1; i <= sqrt(n); i++) {
+        if (n % i == 0) {
+            cout << i << " ";
+            if (i != n / i) {
+                cout << n / i << " ";
+            }
+        }
+    }
+    cout << endl;
+    return 0;
+}
+
 int main() {
      int n;
      cin >> n;
@@ -133,6 +156,8 @@ int main() {
     // euclidGCD(n1, n2);
     // cout << euclidGCD(n1, n2) << endl;
     // checkArmstrongNumber(n); // slower bec 2 loops
-    checkAN(n);
+    // checkAN(n);
+    // printDivisors(n); not optimal
+    printDivisorsOptimized(n); // optimal
     return 0;
 }
