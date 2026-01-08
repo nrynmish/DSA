@@ -8,6 +8,7 @@ void printName(int n, string s) {
     cout << s << endl;
     printName(n-1, s);
 }
+
 void printNumbers(int n) {
     if (n == 0) {
         return;
@@ -24,6 +25,22 @@ void printNumbersReverse(int n) {
     printNumbersReverse(n-1);
 }
 
+void printNumbersBacktracking(int i, int n) {
+    if (i < 1) {
+        return;
+    }
+    printNumbersBacktracking(i-1, n);
+    cout << i << " ";
+}
+
+void printNumbersBacktrackingReverse(int i, int n) {
+    if (i < 1) {
+        return;
+    }
+    cout << i << " ";
+    printNumbersBacktrackingReverse(i-1, n);
+}
+
 int main() {
     int n;
     // string s;
@@ -33,6 +50,8 @@ int main() {
     // cin >> s;
     // printName(n, s);
     // printNumbers(n);
-    printNumbersReverse(n);
+    // printNumbersReverse(n);
+    // printNumbersBacktracking(n, n);
+    printNumbersBacktrackingReverse(n, n);
     return 0;
 }
