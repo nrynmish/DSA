@@ -143,6 +143,21 @@ int printDivisorsOptimized(int n) {
     return 0;
 }
 
+int checkPrime(int n) {
+    if (n <= 1) {
+        cout << "Not a prime number" << endl;
+        return 0;
+    }
+    for (int i = 2; i <= sqrt(n); i++) {
+        if (n % i == 0) {
+            cout << "Not a prime number" << endl;
+            return 0;
+        }
+    }
+    cout << "Prime number" << endl;
+    return 0;
+}
+
 int main() {
      int n;
      cin >> n;
@@ -158,6 +173,7 @@ int main() {
     // checkArmstrongNumber(n); // slower bec 2 loops
     // checkAN(n);
     // printDivisors(n); not optimal
-    printDivisorsOptimized(n); // optimal
+     // printDivisorsOptimized(n); optimal
+     // checkPrime(n);
     return 0;
 }
