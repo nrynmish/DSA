@@ -41,17 +41,45 @@ void printNumbersBacktrackingReverse(int i, int n) {
     printNumbersBacktrackingReverse(i-1, n);
 }
 
+int printSum(int n) {
+    if (n == 1) {
+        return 1;
+    }
+
+    return n + printSum(n-1);
+}
+
+int factorial(int n) {
+    if (n == 0) {
+        return 1;
+    }
+    return n * factorial(n-1);
+}
+
+void reverseArray(int arr[], int start, int end) {
+    if (start >= end) {
+        return;
+    }
+    swap(arr[start], arr[end]);
+    reverseArray(arr, start + 1, end - 1);
+}
+
 int main() {
-    int n;
+    //  int n;
     // string s;
-    cout << "Enter a number: " << '\n';
-    cin >> n;
+    // cout << "Enter a number: " << '\n';
+    // cin >> n;
     // cout << "Enter a name: " << '\n';
     // cin >> s;
     // printName(n, s);
     // printNumbers(n);
     // printNumbersReverse(n);
     // printNumbersBacktracking(n, n);
-    printNumbersBacktrackingReverse(n, n);
+    // printNumbersBacktrackingReverse(n, n);
+    // cout << "Sum of numbers from 1 to " << n << " is: " << printSum(n) << endl;
+    // cout << "Factorial of " << n << " is: " << factorial(n) << endl;
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    reverseArray(arr, 0, size - 1);
     return 0;
 }
