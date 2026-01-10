@@ -64,11 +64,18 @@ void reverseArray(int arr[], int start, int end) {
     reverseArray(arr, start + 1, end - 1);
 }
 
+int fibonacci(int n) {
+    if (n <= 1) {
+        return n;
+    } 
+    return fibonacci(n-1) + fibonacci(n-2);
+}
+
 int main() {
-    //  int n;
+    int n;
     // string s;
-    // cout << "Enter a number: " << '\n';
-    // cin >> n;
+    cout << "Enter a number: " << '\n';
+    cin >> n;
     // cout << "Enter a name: " << '\n';
     // cin >> s;
     // printName(n, s);
@@ -78,8 +85,9 @@ int main() {
     // printNumbersBacktrackingReverse(n, n);
     // cout << "Sum of numbers from 1 to " << n << " is: " << printSum(n) << endl;
     // cout << "Factorial of " << n << " is: " << factorial(n) << endl;
-    int arr[] = {1, 2, 3, 4, 5};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    reverseArray(arr, 0, size - 1);
+    // int arr[] = {1, 2, 3, 4, 5};
+    // int size = sizeof(arr) / sizeof(arr[0]);
+    // reverseArray(arr, 0, size - 1);
+    cout << fibonacci(n) << endl;
     return 0;
 }
