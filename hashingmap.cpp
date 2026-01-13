@@ -3,20 +3,18 @@ using namespace std;
 
 int main() {
     int n;
-    cin >> n;       // size of the array
+    cin >> n ;       // size of the array
     int arr[n];
     for (int i = 0; i < n; i++) { // input array elements
         cin >> arr[i];
     }
 
+    //precompute
+    map<int, int> mpp; // hash table using map
 
-    // precompute
-    int hash[13] = {0}; // hash table for numbers 0-12
     for (int i = 0; i < n; i++) {
-        hash[arr[i]]++;
+        mpp[arr[i]]++;
     }
-
-
 
     int q;
     cin >> q; // number of queries
@@ -26,9 +24,7 @@ int main() {
         cin >> number; // input the number to be hashed
 
         //fetch
-        cout << hash[number] << endl;
+        cout << mpp[number] << endl;
     }
-
-    return 0;
     
 }
