@@ -16,6 +16,11 @@ int main() {
         mpp[arr[i]]++;
     }
 
+    for (auto it : mpp) {
+        cout << it.first << "->" << it.second << endl;
+    }
+    
+
     int q;
     cin >> q; // number of queries
     while (q--)
