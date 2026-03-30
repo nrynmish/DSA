@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-int main() {
+ int main() {
     int x,y;
     cin >> x >> y;
     string str;
